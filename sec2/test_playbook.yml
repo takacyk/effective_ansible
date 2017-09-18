@@ -1,0 +1,18 @@
+---
+- hosts: test_servers
+  tasks:
+  - name: create directory
+    file:
+        path: /home/takacy/tmp
+        state: directory
+        owner: takacy
+        mode: 0755
+
+  - name: copy file
+    copy:
+        src: /etc/hosts
+        dest: /home/takacy/tmp/hosts
+        owner: takacy
+        mode: 0644
+
+
